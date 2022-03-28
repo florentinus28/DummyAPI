@@ -1,7 +1,7 @@
 name: runPostsDetail
 on:
   schedule:
-    - cron:  '*/5 * * * *'    # At every 15th minute
+    - cron:  '*/60 * * * *'    # At every 15th minute
 jobs:
   build:
     name: Run k6 test
