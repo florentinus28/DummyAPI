@@ -15,7 +15,7 @@ export default function main(){
                 },
             }
         );
-        console.log(response.body)
+//         console.log(response.body)
         check(response, {
             'Get Employee List is status 200': (r) => r.status === 200,
             'Check Data Type : id is number' : (r) => typeof r.json().id === "number",
@@ -36,7 +36,7 @@ export default function main(){
                 },
             }
         );
-        console.log(response.body)
+//         console.log(response.body)
         check(response, {
             'Get Employee List is status 404': (r) => r.status === 404,
         });
