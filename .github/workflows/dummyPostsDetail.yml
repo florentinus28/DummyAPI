@@ -1,7 +1,6 @@
-name: runPostsDetail
+name: runDummyPost
 on:
-  schedule:
-    - cron:  '*/60 * * * *'    # At every 15th minute
+ [push]
 jobs:
   build:
     name: Run k6 test
@@ -9,8 +8,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run k6 local test
+        
+      - name: get Posts Detail
         uses: grafana/k6-action@v0.2.0
         with:
           filename: TC-getPostsDetail.js
+          flags: --vus 1 --duration 1s
+          
+      - name: get Posts Detail
+        uses: grafana/k6-action@v0.2.0
+        with:
+          filename: getPosts.js
           flags: --vus 1 --duration 1s
