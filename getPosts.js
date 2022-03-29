@@ -16,7 +16,7 @@ export default function main(){
         );
 //         console.log(response.body)
         check(response, {
-            'Get Employee List is status 200': (r) => r.status === 201
+            'Get Employee List is status 200': (r) => r.status === 200
         });
     })
 }
